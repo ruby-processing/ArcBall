@@ -1,0 +1,48 @@
+# encoding: utf-8
+# frozen_string_literal: false
+require_relative 'lib/arcball/version'
+
+def create_manifest
+  title = 'Implementation-Title: ArcBall (java extension for jruby)'
+  version = format('Implementation-Version: %s', ArcBall::VERSION)
+  File.open('MANIFEST.MF', 'w') do |f|
+    f.puts(title)
+    f.puts(version)
+  end
+end
+
+task default: [:init, :compile, :install, :gem]
+
+desc 'Create Manifest'
+task :init do
+  create_manifest
+end
+
+desc 'Build gem'
+task :gem do
+  sh 'gem build arcball.gemspec' 
+end
+
+desc 'Install'
+task :install do
+  sh 'mv target/arcball.jar lib'
+end
+
+desc 'Document'
+task :javadoc do
+  sh 'mvn javadoc:javadoc'
+end
+
+desc 'Compile'
+task :compile do
+  sh 'mvn package'
+end
+
+desc 'clean'
+task :clean do
+  Dir['./**/*.%w{jar gem}'].each do |path|
+    puts 'Deleting #{path} ...'
+    File.delete(path)
+  end
+  FileUtils.rm_rf('./target')
+end
