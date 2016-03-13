@@ -14,7 +14,7 @@ MANIFEST.MF
 .dat*
 .repl_history
 build/
-
+*.jar
 ## Documentation cache and generated files:
 /.yardoc/
 /_yardoc/
