@@ -19,3 +19,20 @@ def draw
   box(300, 300, 300)
 end
 ```
+Since version 0.0.2
+
+```ruby
+require 'arcball'
+
+def setup
+  size(600, 600, P3D)
+  smooth(8)
+  Processing::ArcBall.constrain  self #, :zaxis # default constrains to y-axis
+  fill 180
+end
+
+def draw
+  background(50)  
+  box(300, 300, 300)
+end
+```
