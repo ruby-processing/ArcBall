@@ -11,17 +11,17 @@
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
- * 
+ *
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see http://www.gnu.org/licenses.
  */
-
 package monkstone.arcball;
 
 import org.jruby.Ruby;
 import org.jruby.RubyClass;
 import org.jruby.RubyModule;
 import org.jruby.RubyObject;
+import org.jruby.RubySymbol;
 import org.jruby.anno.JRubyClass;
 import org.jruby.anno.JRubyMethod;
 import org.jruby.runtime.Arity;
@@ -83,6 +83,31 @@ public class Rarcball extends RubyObject {
         if (count == 1) {
             PApplet parent = (PApplet) args[0].toJava(PApplet.class);
             new Arcball(parent).setActive(true);
-        }        
+        }
+    }
+
+    /**
+     *
+     * @param context
+     * @param self
+     * @param args optional (no args jx = 0, jy = 0)
+     */
+    @JRubyMethod(name = "constrain", meta = true, rest = true, required = 1, optional = 1)
+
+    public static void constrain(ThreadContext context, IRubyObject self, IRubyObject args[]) {
+        int count = Arity.checkArgumentCount(context.getRuntime(), args, 1, 2);
+        RubySymbol zaxis = RubySymbol.newSymbol(context.getRuntime(), "zaxis");
+        RubySymbol xaxis = RubySymbol.newSymbol(context.getRuntime(), "xaxis");
+        PApplet parent = (PApplet) args[0].toJava(PApplet.class);
+        if (count == 2) {
+            if (xaxis == args[1]) {
+                new Arcball(parent, Constrain.XAXIS).setActive(true);
+            }
+            if (zaxis == args[1]) {
+                new Arcball(parent, Constrain.ZAXIS).setActive(true);
+            }
+        } else {
+            new Arcball(parent, Constrain.YAXIS).setActive(true);
+        }
     }
 }

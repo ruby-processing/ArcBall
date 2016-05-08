@@ -1,6 +1,10 @@
+# -*- encoding: utf-8 -*-
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'arcball/version'
 Gem::Specification.new do |s|
   s.name = 'arcball'
-  s.version = '0.0.1'
+  s.version = ArcBall::VERSION
   s.licenses = ['GPL-3.0']
   s.has_rdoc = false
   s.extra_rdoc_files = ['README.md', 'LICENSE.md']
@@ -16,4 +20,3 @@ Gem::Specification.new do |s|
   s.platform='java'
   s.rubygems_version = %q{2.5.2}
 end
-

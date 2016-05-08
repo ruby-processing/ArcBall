@@ -1,7 +1,7 @@
 require 'fileutils'
 project 'arcball', 'https://github.com/ruby-processing/ArcBall' do
   model_version '4.0.0'
-  id 'arcball:arcball', '0.0.1'
+  id 'arcball:arcball', '0.0.2'
   packaging 'jar'
   description 'arcball for arcball'
   organization 'ruby-processing', 'https://ruby-processing.github.io'
