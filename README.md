@@ -2,7 +2,7 @@
 ArcBall functionality for processing (ruby versions) as gem
 
 ### Example Usage 
-The sketch class need to to inherit from PApplet to work and self should return such an instance. The following is a ruby-processing example, which currently supplies arcball via a library, but gem distribution has its attractions
+The sketch class need to to inherit from PApplet to work and self should return such an instance. The following is a ruby-processing example, which currently supplies arcball via a library, but gem distribution has its attractions. Drag mouse to rotate. Hold down 'x', 'y' or 'z' keys to constrain axis of rotation, mouse-wheel to zoom.
 
 ```ruby
 require 'arcball'
