@@ -19,7 +19,7 @@ def draw
   box(300, 300, 300)
 end
 ```
-Since version 0.0.2, you can also fix rotation to one axis at initialisation
+Since version 0.0.2, you can also fix rotation to one axis at initialization
 
 ```ruby
 require 'arcball'
