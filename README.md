@@ -27,7 +27,7 @@ require 'arcball'
 def setup
   size(600, 600, P3D)
   smooth(8)
-  Processing::ArcBall.constrain  self #, :zaxis # default constrains to y-axis
+  Processing::ArcBall.constrain self #, :zaxis # default constrains to y-axis
   fill 180
 end
 
