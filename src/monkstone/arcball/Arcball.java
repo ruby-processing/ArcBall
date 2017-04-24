@@ -68,11 +68,8 @@ public class Arcball {
      * @param radius double radius of arcball
      */
     public Arcball(PApplet parent, double center_x, double center_y, double radius) {
-        this.zoomWheelHandler = new WheelHandler() {
-            @Override
-            public void handleWheel(int delta) {
-                zoom += delta * 0.05;
-            }
+        this.zoomWheelHandler = (int delta) -> {
+            zoom += delta * 0.05;
         };
         this.parent = parent;
         this.center_x = center_x;
