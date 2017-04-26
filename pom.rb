@@ -32,7 +32,7 @@ project 'arcball', 'https://github.com/ruby-processing/ArcBall' do
     )
 
   pom('org.jruby:jruby:9.1.8.0')
-  jar('org.processing:core:3.2.3')
+  jar('org.processing:core:3.3.2')
 
   plugin_management do
     plugin :resources, '2.6'
