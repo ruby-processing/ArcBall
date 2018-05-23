@@ -1,7 +1,7 @@
 require 'fileutils'
 project 'arcball', 'https://github.com/ruby-processing/ArcBall' do
   model_version '4.0.0'
-  id 'arcball:arcball', '1.0.0'
+  id 'arcball:arcball', '1.0.1'
   packaging 'jar'
   description 'arcball for arcball'
   organization 'ruby-processing', 'https://ruby-processing.github.io'
@@ -31,14 +31,14 @@ project 'arcball', 'https://github.com/ruby-processing/ArcBall' do
     'jruby.api' => 'http://jruby.org/apidocs/',
     )
 
-  pom('org.jruby:jruby:9.1.8.0')
-  jar('org.processing:core:3.3.2')
+  pom('org.jruby:jruby:9.1.17.0')
+  jar('org.processing:core:3.3.7')
 
   plugin_management do
     plugin :resources, '2.6'
     plugin :dependency, '2.10'
 
-    plugin( :compiler, '3.5.1',
+    plugin( :compiler, '3.7.0',
       source: '${maven.compiler.source}',
       target: '${maven.compiler.target}'
     )
