@@ -11,7 +11,7 @@ DO NOT MODIFIY - GENERATED CODE
   <modelVersion>4.0.0</modelVersion>
   <groupId>arcball</groupId>
   <artifactId>arcball</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <name>arcball</name>
   <description>arcball for arcball</description>
   <url>https://github.com/ruby-processing/ArcBall</url>
@@ -38,20 +38,20 @@ DO NOT MODIFIY - GENERATED CODE
     <url>https://github.com/monkstone/arcball/issues</url>
   </issueManagement>
   <properties>
-    <processing.api>http://processing.github.io/processing-javadocs/core/</processing.api>
-    <source.directory>src</source.directory>
-    <polyglot.dump.pom>pom.xml</polyglot.dump.pom>
     <arcball.basedir>${project.basedir}</arcball.basedir>
-    <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
     <jruby.api>http://jruby.org/apidocs/</jruby.api>
+    <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <polyglot.dump.pom>pom.xml</polyglot.dump.pom>
+    <processing.api>http://processing.github.io/processing-javadocs/core/</processing.api>
+    <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+    <source.directory>src</source.directory>
   </properties>
   <dependencies>
     <dependency>
       <groupId>org.jruby</groupId>
       <artifactId>jruby</artifactId>
-      <version>9.1.17.0</version>
+      <version>9.2.11.1</version>
       <type>pom</type>
     </dependency>
     <dependency>
@@ -67,16 +67,12 @@ DO NOT MODIFIY - GENERATED CODE
     <pluginManagement>
       <plugins>
         <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>2.6</version>
-        </plugin>
-        <plugin>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.10</version>
+          <version>3.1.2</version>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.7.0</version>
+          <version>3.8.1</version>
           <configuration>
             <source>${maven.compiler.source}</source>
             <target>${maven.compiler.target}</target>
@@ -88,14 +84,14 @@ DO NOT MODIFIY - GENERATED CODE
           <configuration>
             <detectOfflineLinks>false</detectOfflineLinks>
             <links>
-              <link>${jruby.api}</link>
               <link>${processing.api}</link>
+              <link>${jruby.api}</link>
             </links>
           </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.2.0</version>
           <configuration>
             <archive>
               <manifestFile>MANIFEST.MF</manifestFile>

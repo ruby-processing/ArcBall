@@ -1,5 +1,5 @@
-# encoding: utf-8
 # frozen_string_literal: false
+
 require_relative 'lib/arcball/version'
 
 def create_manifest
@@ -11,7 +11,7 @@ def create_manifest
   end
 end
 
-task default: [:init, :compile, :install, :gem]
+task default: %i[init compile install gem]
 
 desc 'Create Manifest'
 task :init do
@@ -20,28 +20,28 @@ end
 
 desc 'Build gem'
 task :gem do
-  sh 'gem build arcball.gemspec' 
+  system 'gem build arcball.gemspec'
 end
 
 desc 'Install'
 task :install do
-  sh 'mv target/arcball.jar lib'
+  system 'mv target/arcball.jar lib'
 end
 
 desc 'Document'
 task :javadoc do
-  sh 'mvn javadoc:javadoc'
+  system '.mvnw javadoc:javadoc'
 end
 
 desc 'Compile'
 task :compile do
-  sh 'mvn package'
+  system '.mvnw package'
 end
 
 desc 'clean'
 task :clean do
   Dir['./**/*.%w{jar gem}'].each do |path|
-    puts 'Deleting #{path} ...'
+    puts "Deleting #{path} ..."
     File.delete(path)
   end
   FileUtils.rm_rf('./target')
