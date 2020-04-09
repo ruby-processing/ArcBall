@@ -30,12 +30,12 @@ end
 
 desc 'Document'
 task :javadoc do
-  system '.mvnw javadoc:javadoc'
+  system './mvnw javadoc:javadoc'
 end
 
 desc 'Compile'
 task :compile do
-  system '.mvnw package'
+  system './mvnw package'
 end
 
 desc 'clean'
