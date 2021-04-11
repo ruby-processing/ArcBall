@@ -2,7 +2,7 @@
 <!--
 
 
-DO NOT MODIFIY - GENERATED CODE
+DO NOT MODIFY - GENERATED CODE
 
 
 -->
@@ -11,7 +11,7 @@ DO NOT MODIFIY - GENERATED CODE
   <modelVersion>4.0.0</modelVersion>
   <groupId>arcball</groupId>
   <artifactId>arcball</artifactId>
-  <version>1.0.2</version>
+  <version>1.1.0</version>
   <name>arcball</name>
   <description>arcball for arcball</description>
   <url>https://github.com/ruby-processing/ArcBall</url>
@@ -40,8 +40,6 @@ DO NOT MODIFIY - GENERATED CODE
   <properties>
     <arcball.basedir>${project.basedir}</arcball.basedir>
     <jruby.api>http://jruby.org/apidocs/</jruby.api>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
     <polyglot.dump.pom>pom.xml</polyglot.dump.pom>
     <processing.api>http://processing.github.io/processing-javadocs/core/</processing.api>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
@@ -51,7 +49,7 @@ DO NOT MODIFIY - GENERATED CODE
     <dependency>
       <groupId>org.jruby</groupId>
       <artifactId>jruby</artifactId>
-      <version>9.2.11.1</version>
+      <version>9.2.17.0</version>
       <type>pom</type>
     </dependency>
     <dependency>
@@ -74,8 +72,7 @@ DO NOT MODIFIY - GENERATED CODE
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.1</version>
           <configuration>
-            <source>${maven.compiler.source}</source>
-            <target>${maven.compiler.target}</target>
+            <release>11</release>
           </configuration>
         </plugin>
         <plugin>

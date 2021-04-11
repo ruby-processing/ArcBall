@@ -1,21 +1,22 @@
-/**
- * The purpose of this library is to allow users to use ArcBall in processing
- * sketches Copyright (C) 2016 Martin Prout
+/*
+ * Copyright (c) 2015-20 Martin Prout
  *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- * 
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see http://www.gnu.org/licenses.
+ * http://creativecommons.org/licenses/LGPL/2.1/
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
- 
 package monkstone.arcball;
 
 /**
@@ -43,16 +44,16 @@ public final class Jvector {
 
     /**
      *
-     * @param x
-     * @param y
-     * @param z
+     * @param x double
+     * @param y double
+     * @param z double
      */
     public Jvector(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
-    
+
     /**
      *
      */
@@ -62,7 +63,7 @@ public final class Jvector {
 
     /**
      *
-     * @param vect
+     * @param vect Jvector
      */
     public Jvector(Jvector vect) {
         this(vect.x, vect.y, vect.z);
@@ -70,8 +71,8 @@ public final class Jvector {
 
     /**
      *
-     * @param other
-     * @return subtracted vector
+     * @param other Jvector
+     * @return result new Jvector
      */
     public Jvector sub(Jvector other) {
         return new Jvector(this.x - other.x, this.y - other.y, this.z - other.z);
@@ -79,8 +80,8 @@ public final class Jvector {
 
     /**
      *
-     * @param scalar
-     * @return subtracted vector
+     * @param scalar double
+     * @return result new Jvector
      */
     public Jvector mult(double scalar) {
         return new Jvector(this.x * scalar, this.y * scalar, this.z * scalar);
@@ -88,7 +89,7 @@ public final class Jvector {
 
     /**
      *
-     * @return magnitude float
+     * @return mag double
      */
     public double mag() {
         return  Math.sqrt(x * x + y * y + z * z);
@@ -97,7 +98,7 @@ public final class Jvector {
     /**
      * The usual normalize
      *
-     * @return this Jvector
+     * @return this Jvector normalized
      */
     public Jvector normalize() {
         double mag =  Math.sqrt(x * x + y * y + z * z);
@@ -109,8 +110,8 @@ public final class Jvector {
 
     /**
      *
-     * @param other
-     * @return new dot product
+     * @param other Jvector
+     * @return product double
      */
     public double dot(Jvector other) {
         return x * other.x + y * other.y + z * other.z;
@@ -118,8 +119,8 @@ public final class Jvector {
 
     /**
      *
-     * @param other
-     * @return new cross product     
+     * @param other Jvector
+     * @return cross product Jvector
      */
     public Jvector cross(Jvector other) {
         double xc = y * other.z - z * other.y;
@@ -130,8 +131,8 @@ public final class Jvector {
 
     /**
      *
-     * @param other
-     * @return boolean
+     * @param other Jvector
+     * @return equals boolean
      */
     public boolean equals(Jvector other) {
         if (other instanceof Jvector) {
@@ -142,7 +143,7 @@ public final class Jvector {
             if (Math.abs(this.y - other.y) > EPSILON) {
                 return false;
             }
-            return (Math.abs(this.z - other.z) > EPSILON);
+            return Math.abs(this.z - other.z) > EPSILON;
         }
         return false;
 
@@ -150,8 +151,8 @@ public final class Jvector {
 
     /**
      *
-     * @param obj
-     * @return boolean
+     * @param obj Object
+     * @return equals boolean
      */
     @Override
     public boolean equals(Object obj) {
@@ -168,12 +169,12 @@ public final class Jvector {
         if (Double.doubleToLongBits(this.y) != Double.doubleToLongBits(other.y)) {
             return false;
         }
-        return (Double.doubleToLongBits(this.z) != Double.doubleToLongBits(other.z));
+        return Double.doubleToLongBits(this.z) != Double.doubleToLongBits(other.z);
     }
 
     /**
      *
-     * @return has int
+     * @return hash int
      */
     @Override
     public int hashCode() {
@@ -184,4 +185,3 @@ public final class Jvector {
         return hash;
     }
 }
-

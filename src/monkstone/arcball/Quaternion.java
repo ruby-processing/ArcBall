@@ -1,19 +1,21 @@
-/**
- * The purpose of this library is to allow users to use ArcBall in processing
- * sketches Copyright (C) 2016 Martin Prout
+/*
+ * Copyright (c) 2015-20 Martin Prout
  *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- * 
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see http://www.gnu.org/licenses.
+ * http://creativecommons.org/licenses/LGPL/2.1/
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
 package monkstone.arcball;
@@ -22,7 +24,7 @@ package monkstone.arcball;
  * Based on a original sketch by Ariel Malka
  * Arcball quaternion idea by Ken Shoemake
  * http://dl.acm.org/citation.cfm?id=325242
- * A google of the quaternions term will find a 
+ * A google of the quaternions term will find a
  * freely down-loadable article by Ken Shoemake.
  * @author Martin Prout
  */
@@ -31,18 +33,18 @@ public final class Quaternion {
     private double w, x, y, z;
 
     /**
-     * 
+     *
      */
     public Quaternion() {
         reset();
     }
 
     /**
-     * 
-     * @param w
-     * @param x
-     * @param y
-     * @param z
+     *
+     * @param w double
+     * @param x double
+     * @param y double
+     * @param z double
      */
     public Quaternion(double w, double x, double y, double z) {
         this.w = w;
@@ -52,9 +54,9 @@ public final class Quaternion {
     }
 
     /**
-     * 
+     *
      */
-    public final void reset() {
+    public void reset() {
         w = 1.0f;
         x = 0.0f;
         y = 0.0f;
@@ -62,8 +64,8 @@ public final class Quaternion {
     }
 
     /**
-     * 
-     * @param w scalar 
+     *
+     * @param w scalar double
      * @param v custom Vector class
      */
     public void set(double w, Jvector v) {
@@ -74,8 +76,8 @@ public final class Quaternion {
     }
 
     /**
-     * 
-     * @param q
+     *
+     * @param q Quaternion
      */
     public void set(Quaternion q) {
         w = q.w;
@@ -85,9 +87,9 @@ public final class Quaternion {
     }
 
     /**
-     * 
-     * @param q1
-     * @param q2
+     *
+     * @param q1 Quaternion
+     * @param q2 Quaternion
      * @return new Quaternion
      */
     public static Quaternion mult(Quaternion q1, Quaternion q2) {
@@ -97,10 +99,10 @@ public final class Quaternion {
         double z = q1.w * q2.z + q1.z * q2.w + q1.x * q2.y - q1.y * q2.x;
         return new Quaternion(w, x, y, z);
     }
-    
+
     /**
-     * Transform this Quaternion into an angle (radians) and an axis vector, about 
-     * which to rotate (avoids NaN by setting sa to 1.0F when sa < epsilon)
+     * Transform this Quaternion into an angle (radians) and an axis vector, about
+     * which to rotate (avoids NaN by setting sa to 1.0F when sa &lt; epsilon)
      * @return a new double[] where a0 = angle and a1 .. a3 are axis vector
      */
 

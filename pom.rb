@@ -4,7 +4,7 @@ require 'fileutils'
 
 project 'arcball', 'https://github.com/ruby-processing/ArcBall' do
   model_version '4.0.0'
-  id 'arcball:arcball', '1.0.2'
+  id 'arcball:arcball', '1.1.0'
   packaging 'jar'
   description 'arcball for arcball'
   organization 'ruby-processing', 'https://ruby-processing.github.io'
@@ -26,20 +26,17 @@ project 'arcball', 'https://github.com/ruby-processing/ArcBall' do
   properties('source.directory' => 'src',
              'arcball.basedir' => '${project.basedir}',
              'polyglot.dump.pom' => 'pom.xml',
-             'maven.compiler.source' => '1.8',
              'project.build.sourceEncoding' => 'utf-8',
-             'maven.compiler.target' => '1.8',
              'jruby.api' => 'http://jruby.org/apidocs/',
              'processing.api' => 'http://processing.github.io/processing-javadocs/core/')
 
-  pom('org.jruby:jruby:9.2.11.1')
+  pom('org.jruby:jruby:9.2.17.0')
   jar('org.processing:core:3.3.7')
 
   overrides do
     plugin :dependency, '3.1.2'
     plugin(:compiler, '3.8.1',
-           source: '${maven.compiler.source}',
-           target: '${maven.compiler.target}')
+      'release' => '11')
     plugin(:javadoc, '2.10.4',
            'detectOfflineLinks' => 'false',
            'links' => ['${processing.api}',
