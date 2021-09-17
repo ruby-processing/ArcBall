@@ -2,21 +2,7 @@
 
 require_relative 'lib/arcball/version'
 
-def create_manifest
-  title = 'Implementation-Title: ArcBall (java extension for jruby)'
-  version = format('Implementation-Version: %s', ArcBall::VERSION)
-  File.open('MANIFEST.MF', 'w') do |f|
-    f.puts(title)
-    f.puts(version)
-  end
-end
-
-task default: %i[init compile install gem]
-
-desc 'Create Manifest'
-task :init do
-  create_manifest
-end
+task default: %i[compile install gem]
 
 desc 'Build gem'
 task :gem do

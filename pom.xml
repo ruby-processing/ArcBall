@@ -11,7 +11,7 @@ DO NOT MODIFY - GENERATED CODE
   <modelVersion>4.0.0</modelVersion>
   <groupId>arcball</groupId>
   <artifactId>arcball</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <name>arcball</name>
   <description>arcball for arcball</description>
   <url>https://github.com/ruby-processing/ArcBall</url>
@@ -49,13 +49,13 @@ DO NOT MODIFY - GENERATED CODE
     <dependency>
       <groupId>org.jruby</groupId>
       <artifactId>jruby</artifactId>
-      <version>9.2.17.0</version>
+      <version>9.2.19.0</version>
       <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.processing</groupId>
       <artifactId>core</artifactId>
-      <version>3.3.7</version>
+      <version>4.0.0</version>
     </dependency>
   </dependencies>
   <build>
@@ -91,7 +91,9 @@ DO NOT MODIFY - GENERATED CODE
           <version>3.2.0</version>
           <configuration>
             <archive>
-              <manifestFile>MANIFEST.MF</manifestFile>
+              <manifestEntries>
+                <Automatic-Module-Name>monkstone.arcball</Automatic-Module-Name>
+              </manifestEntries>
             </archive>
           </configuration>
         </plugin>

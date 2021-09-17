@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version = ArcBall::VERSION
   s.licenses = ['GPL-3.0']
   s.authors = ['Martin Prout']
-  s.date = %q{2021-04-11}
+  s.date = %q{2021-09-17}
   s.description = %q{A ArcBall in java for propane and PiCrate}
   s.summary = %q{Provides arcball functionality to processing, from a ruby environment}
   s.email = %q{mamba2928@yahoo.co.uk}
