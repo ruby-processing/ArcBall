@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors = ['Martin Prout']
   s.date = %q{2021-09-17}
   s.description = %q{A ArcBall in java for propane and PiCrate}
-  s.summary = %q{Provides arcball functionality to processing, from a ruby environment}
+  s.summary = %q{Provides arcball functionality to processing, from a ruby environment provides java module monkstone.arcball}
   s.email = %q{mamba2928@yahoo.co.uk}
   s.files = ['Rakefile', 'lib/arcball.rb', 'lib/arcball.jar', 'lib/arcball/version.rb']
   s.homepage = %q{http://rubygems.org/gems/arcball}
